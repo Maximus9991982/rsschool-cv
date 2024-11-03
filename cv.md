@@ -20,13 +20,16 @@
 - - -  
 **Courses:**  
  
-* *JS/FE Pre-school 2024 Q2 (in progress)*
+* *JavaScript/Front-end Pre-school 2024 Q2*
+* *JavaScript/Front-end 2024 Q4 (in progress)*
+
 
   
 - - -  
 **My projects:**  
- 
-* *[My CV](https://maximus9991982.github.io/rsschool-cv/cv)*
+
+* *[Shelter](https://rolling-scopes-school.github.io/maximus9991982-JSFEPRESCHOOL2024Q2/shelter/main-1280.html?#)* 
+* *[TicTacToe](https://rolling-scopes-school.github.io/maximus9991982-JSFEPRESCHOOL2024Q2/TicTacToe/index.html#)*
 
   
 - - -  
@@ -87,7 +90,45 @@ End If
 
 Application.ScreenUpdating = True
 End Sub
-```  
+```
+*This is a part of TicTacToe code:*    
+``` JS
+const cell_1_1 = document.querySelector('#cell_1_1');
+const cell_1_2 = document.querySelector('#cell_1_2');
+const cell_1_3 = document.querySelector('#cell_1_3');
+const cell_2_1 = document.querySelector('#cell_2_1');
+const cell_2_2 = document.querySelector('#cell_2_2');
+const cell_2_3 = document.querySelector('#cell_2_3');
+const cell_3_1 = document.querySelector('#cell_3_1');
+const cell_3_2 = document.querySelector('#cell_3_2');
+const cell_3_3 = document.querySelector('#cell_3_3');
+const menuNewGame = document.querySelector('#menuNewGame');
+const menuRecords = document.querySelector('#menuRecords');
+const modal_window_content = document.querySelector('#modal_window_content');
+const button_close = document.querySelector('#button_close');
+
+let recordsArray = [{ name: '-', score: 0},    
+];
+
+if (localStorage.getItem('recordsArray') !== null)
+recordsArray = JSON.parse(localStorage.getItem('recordsArray'));
+
+console.log(recordsArray);
+
+const writeRecordsArray = (name, score) => {
+    if (recordsArray.length == 10){
+    let objectToAdd = { name: name, score: score };
+    recordsArray.shift();
+    recordsArray.push(objectToAdd);
+    localStorage.setItem('recordsArray', JSON.stringify(recordsArray));
+    }
+    else {
+    let objectToAdd = { name: name, score: score };  
+    recordsArray.push(objectToAdd);
+    localStorage.setItem('recordsArray', JSON.stringify(recordsArray));
+    }
+}
+```
 - - -  
 **Languages:**  
   
