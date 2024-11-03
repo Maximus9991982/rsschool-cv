@@ -135,6 +135,7 @@ const writeRecordsArray = (name, score) => {
     localStorage.setItem('recordsArray', JSON.stringify(recordsArray));
     }
 }
+...
 ```
 - - -  
 **Languages:**  
