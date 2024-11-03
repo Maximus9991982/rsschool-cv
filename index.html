@@ -1,1 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
 
+<head>
+<meta charset="UTF-8">
+<title>Alexander Bogonosov_CV</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body">
+
+
+<div class="avatar">
+  <img class="avatar_img" src="images/DSC03817_crop_1х1.jpg" alt="Alexander Bogonosov avatar">
+  <div class="line_avatar"></div> 
+  <div class="contakts">
+    <h1 class="fio">Alexander Bogonosov</h1>
+    <p class="contact_information">Contact information:</p>
+    <p class="contact_information_item"><img src="images/location_icon.png" alt="location_ico" width="18"> Location: Vitebsk, Belarus</p>
+    <p class="contact_information_item"><img src="images/email_icon.png" alt="e-mail_ico" width="18"> e-mail: <a class="avatar_menu_item" href="mailto:maximus999@tut.by">maximus999@tut.by</a></p>
+    <p class="contact_information_item"><img src="images/telegram_icon.png" alt="telegram_ico" width="18"> Telegram: <a class="avatar_menu_item" href="https://t.me/@Maximus9991982">@Maximus9991982</a></p>
+  </div>
+  <div class="line_avatar"></div>
+  <div>
+    <nav>
+      <ul class="avatar_menu">
+      <li><a class="avatar_menu_item" href="#about_me">About me</a></li>
+      <li><a class="avatar_menu_item" href="#education">Education</a></li>
+      <li><a class="avatar_menu_item" href="#сourses">Courses</a></li>
+      <li><a class="avatar_menu_item" href="#skills">My skills</a></li>
+      <li><a class="avatar_menu_item" href="#my_projects">My projects</a></li>
+      <li><a class="avatar_menu_item" href="#code_example">Code example</a></li>
+      <li><a class="avatar_menu_item" href="#languages">Languages</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<br>
+
+<div class="about_me" id="about_me">
+  <div><h2 class="about_me_header">About me:</h2></div>
+  <div class="line_about_me"></div> 
+  <div>	
+    <p class="about_me_item"><i>I’m 42 years old. I have being working at Beltelecom as an engineer since 2005. 
+		My goal is to make my life better. Want to learn new. Diligent. Responsible.</i></p>    
+    <p class="about_me_item"><i>Less words, more action.</i></p>
+  </div>
+</div>
+
+
+<br>
+
+<div class="education" id="education">
+  <div><h2 class="education_header">Education:</h2></div>
+  <div class="line_education"></div>
+  <div>
+    <p class="education_item"><i>Belorussian Academy of communications 1999 - 2005 (specialization: telecommunication network software, studied: C, C++, HTML, JS, PHP, SQL, Pascal, VB)</i></p>
+  </div>
+</div>
+
+<br>
+
+<div class="сourses" id="сourses">
+  <div class="сourses_header"><h4>Courses:</h4></div>
+  <div class="line_сourses"></div>
+  <div> 
+    <ul class="сourses_item">
+      <li><i>JavaScript/Front-end Pre-school 2024 Q2</i></li>  
+      <li><i>JavaScript/Front-end 2024 Q4 (in progress)</i></li> 
+    </ul>
+  </div>
+  </div>
+
+<br>
+
+<div class="skills" id="skills">
+  <div class="skills_header"><h4>My skills:</h4></div>
+  <div class="line_skills"></div>
+  <div> 
+    <ul class="skills_item">
+      <li><i>HTML & CSS (Junior)</i></li>  
+      <li><i>JavaScript (Junior)</i></li>
+      <li><i>C++ (Junior)</i></li>
+      <li><i>Git, GitHub</i></li>
+      <li><i>VS Code</i></li>
+    </ul>
+  </div>
+  </div>
+
+<br>
+
+<div class="my_projects" id="my_projects">
+  <div class="my_projects_header"><h4>My projects:</h4></div>
+  <div class="line_my_projects"></div>
+  <div>
+    <ul class="my_projects_item">
+      <li><i><a href="https://rolling-scopes-school.github.io/maximus9991982-JSFEPRESCHOOL2024Q2/shelter/main-1280.html?#">Shelter</a></i></li>  
+      <li><i><a href="https://rolling-scopes-school.github.io/maximus9991982-JSFEPRESCHOOL2024Q2/TicTacToe/index.html#">TicTacToe</a></i></li>
+    </ul>
+  </div>
+</div>
+
+<br>
+
+<div class="code_example" id="code_example">
+  <div class="code_example_header"><h4>Code example:</h4></div>
+  <div class="line_code_example"></div>
+  <div class="code_example_block">
+    <div>
+    <p class="code_example_item"><i>This is my last VBA-macro, which makes my routine job easer:</i></p>
+    
+    <details>
+      <summary class="code_example_item">View code (click to see)</summary>
+      <div>
+      
+      <pre>
+      <code  class="code_example_code">
+	Sub PenaltyCalculationAndDate()  
+        '' макрос для автоматического расчета, 
+        '' вводим вручную только первые 2 месяца
+	If MsgBox("Произвести расчет?", vbQuestion + vbYesNo) = 6 Then
+
+	Dim isEmptyGraph As Boolean
+	Dim GraphColumn As Integer
+
+	Application.ScreenUpdating = False
+
+	isEmptyGraph = False
+	valueColumn = 14
+
+	Range("O5:AC5").Select
+	Selection.ClearContents
+	Range("M6:AC6").Select
+	Selection.ClearContents
+	Range("M5:M5").Select
+    
+	'' Заполняем график датами иэ эталонных значений
+	Do
+	Cells(5, valueColumn + 1) = Cells(9, valueColumn + 1)
+	valueColumn = valueColumn + 1
+	Loop While Cells(5, valueColumn) &#60; &#61; Cells(3, 15)
+	
+	'' проверка на выходные
+	valueColumn = 13
+	Do
+	If Weekday(Cells(5, valueColumn), vbMonday) = 6 Then
+	Cells(5, valueColumn) = Cells(5, valueColumn) - 1
+	Else
+	If Weekday(Cells(5, valueColumn), vbMonday) = 7 Then
+	Cells(5, valueColumn) = Cells(5, valueColumn) - 2
+	End If
+	End If
+	valueColumn = valueColumn + 1
+	Loop While Cells(5, valueColumn) &#60; &#61; Cells(3, 15)
+	
+	valueColumn = 13
+	Do        
+        '' копируем дату из графика в расчет
+	Cells(4, 6) = Cells(5, valueColumn) 
+        '' копируем значение штрафа в график
+	Cells(6, valueColumn) = Cells(24, 10)  
+	valueColumn = valueColumn + 1
+      
+       '' проверяем закончились ли даты в графике
+	If Cells(5, valueColumn) = Empty Then  
+	isEmptyGraph = True
+	End If
+            
+	Loop While (Not isEmptyGraph)
+	End If
+
+	Application.ScreenUpdating = True
+	End Sub
+
+  </code>
+  </pre> 
+  </div>
+  </details>
+    </div>
+
+    <div>
+    <p class="code_example_item"><i>This is a part of TicTacToe code:</i></p>
+    
+    <details>
+      <summary class="code_example_item">View code (click to see)</summary>
+      <div>
+      
+      <pre>
+      <code  class="code_example_code">
+        const cell_1_1 = document.querySelector('#cell_1_1');
+        const cell_1_2 = document.querySelector('#cell_1_2');
+        const cell_1_3 = document.querySelector('#cell_1_3');
+        const cell_2_1 = document.querySelector('#cell_2_1');
+        const cell_2_2 = document.querySelector('#cell_2_2');
+        const cell_2_3 = document.querySelector('#cell_2_3');
+        const cell_3_1 = document.querySelector('#cell_3_1');
+        const cell_3_2 = document.querySelector('#cell_3_2');
+        const cell_3_3 = document.querySelector('#cell_3_3');
+        const menuNewGame = document.querySelector('#menuNewGame');
+        const menuRecords = document.querySelector('#menuRecords');
+        const modal_window_content = document.querySelector('#modal_window_content');
+        const button_close = document.querySelector('#button_close');
+        
+        let recordsArray = [{ name: '-', score: 0},    
+        ];
+        
+        if (localStorage.getItem('recordsArray') !== null)
+        recordsArray = JSON.parse(localStorage.getItem('recordsArray'));
+        
+        console.log(recordsArray);
+        
+        const writeRecordsArray = (name, score) => {
+            if (recordsArray.length == 10){
+            let objectToAdd = { name: name, score: score };
+            recordsArray.shift();
+            recordsArray.push(objectToAdd);
+            localStorage.setItem('recordsArray', JSON.stringify(recordsArray));
+            }
+            else {
+            let objectToAdd = { name: name, score: score };  
+            recordsArray.push(objectToAdd);
+            localStorage.setItem('recordsArray', JSON.stringify(recordsArray));
+            }
+        }
+        ...
+  </code>
+  </pre> 
+  </div>
+  </details>
+    </div>
+  </div>
+
+</div>
+
+<br>
+
+<div class="languages" id="languages">
+  <div class="languages_header"><h4>Languages:</h4></div>
+  <div class="line_languages"></div>
+  <div>
+    <ul class="languages_item">
+      <li>
+        <p><i>English (Upper-Intermediate (B2), according to online test: <a href="https://puzzle-english.com">Puzzle English</a> )</i></p>
+        <details>
+          <summary>View test result (click to see)</summary>
+          <div>
+            <img src="https://sun9-53.userapi.com/impg/sFJuQHHOy-9dHbVdq1PCmHgPA5dXdR4xuvCy_g/dqxXj4vdAjo.jpg?size=1211x375&quality=95&sign=9ef373885ae1e5117e85c33bce05f93b&type=album" alt="Alexander Bogonosov English-test result screenshot" width="700" height="217">
+          </div>
+        </details>
+      </li>       
+      <li><i>Belarussian (native)</i></li>
+      <li><i>Russian (native)</i></li> 
+    </ul>
+  </div>
+</div>
+
+<br>
+
+<footer>
+  <div class="footer">
+    <div class="footer_item">
+      <a href="https://github.com/Maximus9991982">
+        <svg height="56" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="56" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
+          <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z">
+          </path>
+        </svg>
+      </a>
+    </div>  
+    <div class="footer_item">2024</div>
+    <div class="footer_item"><a href="https://rs.school/courses/javascript-ru"><img src="/images/rss-logo.svg" alt="JS course logo" width="64" height="64"></a></div>
+  </div>
+</footer>
+
+</body>
+
+</html>
