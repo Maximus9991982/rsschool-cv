@@ -18,6 +18,13 @@
   
 *Belorussian Academy of communications 1999 - 2005 (specialization: telecommunication network software, studied: C, C++, HTML, JS, PHP, SQL, Pascal, VB)*  
 - - -  
+**Skills:**  
+* *HTML & CSS (Junior)*
+* *JavaScript (Junior)*
+* *C++ (Junior)*
+* *Git, GitHub*
+* *VS Code*
+- - -  
 **Courses:**  
  
 * *JavaScript/Front-end Pre-school 2024 Q2*
